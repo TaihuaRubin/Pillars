@@ -7,16 +7,21 @@ To this end — and perhaps it goes without saying — we ask that you don't hel
 
 ## Resources
 
-The following resources are **not** allowed:
+Suggested:
+- Student Notes (can contain anything)
+- Documentation
+- Lecture slides
+- Help tickets (esp in case of specs not running or very basic clarification needed)
 
-* Existing code you've already written.
-* Solution code or code from learnDot.
+Use Sparingly:
+- Old checkpoints
+- Workshop code
+- Stack Overflow
+- Copy-pasting
 
-The following resources **are** allowed:
-
-* Any notes you've taken so far.
-* All the slide decks that we've used in class.
-* Online docs and resources — but do not copy over any code.
+Forbidden:
+- Googling the solution code
+- Communicating via Slack
 
 ## Things we're checking
 
