@@ -7,21 +7,7 @@ To this end — and perhaps it goes without saying — we ask that you don't hel
 
 ## Resources
 
-Suggested:
-- Student Notes (can contain anything)
-- Documentation
-- Lecture slides
-- Help tickets (esp in case of specs not running or very basic clarification needed)
-
-Use Sparingly:
-- Old checkpoints
-- Workshop code
-- Stack Overflow
-- Copy-pasting
-
-Forbidden:
-- Googling the solution code
-- Communicating via Slack
+[FSA Checkpoint Academic Integrity Policy](https://gist.github.com/short-matthew-f/2ef877e84d6624626ec4fcc5d899936b)
 
 ## Things we're checking
 
