@@ -65,7 +65,7 @@ describe('The `Article` model', () => {
 
     });
 
-    xit('requires `content`', async () => {
+    it('requires `content`', async () => {
 
       article.content = null;
 
@@ -87,7 +87,7 @@ describe('The `Article` model', () => {
      *
      * http://docs.sequelizejs.com/manual/tutorial/models-definition.html#validations
      */
-    xit('requires `title` (in a more strict way than for `content`)', async () => {
+    it('requires `title` (in a more strict way than for `content`)', async () => {
 
       article.title = '';
 
@@ -111,7 +111,7 @@ describe('The `Article` model', () => {
      *
      * http://docs.sequelizejs.com/variable/index.html#static-variable-DataTypes
      */
-    xit('can handle long `content`', async () => {
+    it('can handle long `content`', async () => {
 
       let articleContent = 'WALL-E (stylized with an interpunct as WALL·E) is a 2008 American computer-animated science-fiction comedy film produced by Pixar Animation Studios and released by Walt Disney Pictures. Directed by Andrew Stanton, the story follows a robot named WALL-E, who is designed to clean up an abandoned, waste-covered Earth far in the future. He falls in love with another robot named EVE, who also has a programmed task, and follows her into outer space on an adventure that changes the destiny of both his kind and humanity. Both robots exhibit an appearance of free will and emotions similar to humans, which develop further as the film progresses.';
 
@@ -160,7 +160,7 @@ describe('The `Article` model', () => {
        *
        * http://docs.sequelizejs.com/manual/tutorial/models-definition.html#expansion-of-models
        */
-      xit('truncates the `content`', () => {
+      it('truncates the `content`', () => {
 
         expect(article.content).to.equal(fullText);
 
@@ -169,7 +169,7 @@ describe('The `Article` model', () => {
 
       });
 
-      xit('accepts any length', () => {
+      it('accepts any length', () => {
 
         expect(article.content).to.equal(fullText);
 
@@ -179,7 +179,7 @@ describe('The `Article` model', () => {
 
       });
 
-      xit('does -> NOT <- save the instance once truncated', async () => {
+      it('does -> NOT <- save the instance once truncated', async () => {
 
         expect(article.content).to.equal(fullText);
 
@@ -194,9 +194,10 @@ describe('The `Article` model', () => {
         /* eslint-enable no-unused-expressions */
 
         // seriously don't do it
-        await Promise.delay(100);
-        const articles = await Article.findAll();
-        expect(articles).to.have.length(0);
+        setTimeout(async () => {
+          const articles = await Article.findAll();
+          expect(articles).to.have.length(0);
+        }, 100);
 
       });
 
@@ -222,7 +223,7 @@ describe('The `Article` model', () => {
         return Promise.all(articles);
       });
 
-      xit('finds one specific article by its `title`', async () => {
+      it('finds one specific article by its `title`', async () => {
 
         const foundArticle = await Article.findByTitle('Migratory Birds');
         expect(foundArticle).not.to.be.an.instanceOf(Array);
@@ -243,7 +244,7 @@ describe('The `Article` model', () => {
      * http://docs.sequelizejs.com/manual/tutorial/associations.html#belongsto
      */
 
-    xit("belongs to a user, who is stored as the article's `author`", async () => {
+    it("belongs to a user, who is stored as the article's `author`", async () => {
 
       const creatingUser = User.create({ name: 'Alatar the Blue'});
       const creatingArticle = Article.create({
@@ -284,14 +285,14 @@ describe('The `Article` model', () => {
       });
     });
 
-    xit('is originally 0, even if not explicitly set', async () => {
+    it('is originally 0, even if not explicitly set', async () => {
 
       const foundArticle = await Article.findOne({where: {title: 'Biological Immortality'}});
       expect(foundArticle.version).to.equal(0);
 
     });
 
-    xit('increments by 1 every time the article is updated', async () => {
+    it('increments by 1 every time the article is updated', async () => {
 
       const foundArticle = await Article.findOne({where: {title: 'Biological Immortality'}});
       expect(foundArticle.version).to.equal(0);
@@ -327,10 +328,10 @@ describe('The `Article` model', () => {
      *
      * To activate this spec, change `xit` to `it`
      */
-    xit('is a custom getter', async () => {
+    it('is a custom getter', async () => {
 
       // tags should have a `defaultValue` that is an empty array.
-      expect(Article.attributes.tags.defaultValue).to.deep.equal([]);
+      expect(Article.rawAttributes.tags.defaultValue).to.deep.equal([]);
 
       // main functionality of tags
       const createdArticle = await Article.create({
