@@ -1,4 +1,4 @@
-# Checkpoint 3 - Pillars (Express/Sequelize/React)
+# Checkpoint - Pillars (Express/Sequelize/React)
 
 
 This checkpoint is primarily to help us understand how well you've absorbed the material covered so far. It covers the main libraries you will learn in the curriculum: Express, Sequelize, and React.
