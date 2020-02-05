@@ -56,7 +56,8 @@ describe('The `Article` model', () => {
     /**
      * Your model should have two fields (both required): `title` and `content`.
      *
-     * http://docs.sequelizejs.com/manual/tutorial/models-definition.html
+     * https://sequelize.org/master/manual/model-basics.html#model-definition
+     *
      */
     it('includes `title` and `content` fields', async () => {
 
@@ -86,7 +87,7 @@ describe('The `Article` model', () => {
     /**
      * You may want a refresher on Sequelize's validate configurations:
      *
-     * http://docs.sequelizejs.com/manual/tutorial/models-definition.html#validations
+     * https://sequelize.org/master/manual/validations-and-constraints.html#validators
      */
     xit('requires `title` (in a more strict way than for `content`)', async () => {
 
@@ -159,7 +160,7 @@ describe('The `Article` model', () => {
        * This method does not save to the backend, it just modifies the Sequelize
        * object so the user can choose if and when to actually save.
        *
-       * http://docs.sequelizejs.com/manual/tutorial/models-definition.html#expansion-of-models
+       * https://sequelize-guides.netlify.com/instance-and-class-methods/
        */
       xit('truncates the `content`', () => {
 
@@ -209,7 +210,7 @@ describe('The `Article` model', () => {
        * Set up a class method called `findByTitle` that's a convenience
        * method to find a *single* document by its title.
        *
-       * http://docs.sequelizejs.com/manual/tutorial/models-definition.html#expansion-of-models
+       * https://sequelize-guides.netlify.com/instance-and-class-methods/
        */
 
       beforeEach(() => {
@@ -241,7 +242,9 @@ describe('The `Article` model', () => {
      * Add a `belongsTo` relationship between articles and users,
      * but make sure the user is aliased as `author` for each article.
      *
-     * http://docs.sequelizejs.com/manual/tutorial/associations.html#belongsto
+     * https://sequelize.org/master/manual/creating-with-associations.html#belongsto---hasmany---hasone-association
+     *
+     * https://sequelize.org/master/manual/creating-with-associations.html#belongsto-association-with-an-alias
      */
 
     xit("belongs to a user, who is stored as the article's `author`", async () => {
@@ -273,7 +276,7 @@ describe('The `Article` model', () => {
    * Your model should have a field called `version`,
    * which increases by 1 every time you save
    *
-   * http://docs.sequelizejs.com/manual/tutorial/hooks.html
+   * https://sequelize.org/master/manual/hooks.html
    */
 
   describe('`version` field', () => {
@@ -324,7 +327,7 @@ describe('The `Article` model', () => {
      * access it, we should get one string: the tags joined by a comma and space
      *
      * Look at getters and setters:
-     * http://docs.sequelizejs.com/manual/tutorial/models-definition.html#getters-setters
+     * https://sequelize.org/master/manual/getters-setters-virtuals.html
      *
      * To activate this spec, change `xit` to `it`
      */
