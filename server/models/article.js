@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 // Make sure you have `postgres` running!
 
 const User = require('./user');
-const { get } = require('../routes');
+//const { get } = require('../routes');
 
 //---------VVVV---------  your code below  ---------VVV----------
 
@@ -47,6 +47,8 @@ Article.prototype.truncate = function(length){
   this.setDataValue('content', truncated)
 }
 
+
+
 Article.findByTitle = function(titleName){
   let article = Article.findOne({ where:{
     title: titleName
@@ -71,4 +73,4 @@ Article.beforeUpdate((Article) => {
 
 //---------^^^---------  your code above  ---------^^^----------
 
-module.exports = Article;
+module.exports = Article

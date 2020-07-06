@@ -89,7 +89,7 @@ describe('Articles Route:', () => {
      * using the GET /articles route
      *
      */
-    xit('returns another article if there is one in the DB', async () => {
+    it('returns another article if there is one in the DB', async () => {
 
       await Article.create({
         title: 'Test Article',
@@ -142,7 +142,7 @@ describe('Articles Route:', () => {
      * This is a proper GET /articles/ID request
      * where we search by the ID of the article created above
      */
-    xit('returns the JSON of the article based on the id', async () => {
+    it('returns the JSON of the article based on the id', async () => {
 
       const res = await agent
       .get('/articles/' + coolArticle.id)
@@ -158,7 +158,7 @@ describe('Articles Route:', () => {
     /**
      * Here we pass in a bad ID to the URL, we should get a 404 error
      */
-    xit('returns a 404 error if the ID is not correct', () => {
+    it('returns a 404 error if the ID is not correct', () => {
 
       return agent
       .get('/articles/76142896')
@@ -183,7 +183,7 @@ describe('Articles Route:', () => {
      *  }
      *
      */
-    xit('creates a new article', async () => {
+    it('creates a new article', async () => {
 
       const res = await agent
       .post('/articles')
@@ -200,7 +200,7 @@ describe('Articles Route:', () => {
     });
 
     // This one should fail with a 500 because we don't set the article.content
-    xit('does not create a new article without content', () => {
+    it('does not create a new article without content', () => {
 
       return agent
       .post('/articles')
@@ -212,7 +212,7 @@ describe('Articles Route:', () => {
     });
 
     // Check if the articles were actually saved to the database
-    xit('saves the article to the DB', async () => {
+    it('saves the article to the DB', async () => {
 
       await agent
       .post('/articles')
@@ -232,7 +232,7 @@ describe('Articles Route:', () => {
     });
 
     // Do not assume async operations (like db writes) will work; always check
-    xit('sends back JSON of the actual created article, not just the POSTed data', async () => {
+    it('sends back JSON of the actual created article, not just the POSTed data', async () => {
 
       const res = await agent
       .post('/articles')
@@ -276,7 +276,7 @@ describe('Articles Route:', () => {
      *  }
      *
      **/
-    xit('updates an article', async () => {
+    it('updates an article', async () => {
 
       const res = await agent
       .put('/articles/' + article.id)
@@ -292,7 +292,7 @@ describe('Articles Route:', () => {
 
     });
 
-    xit('saves updates to the DB', async () => {
+    it('saves updates to the DB', async () => {
 
       await agent
       .put('/articles/' + article.id)
@@ -307,7 +307,7 @@ describe('Articles Route:', () => {
 
     });
 
-    xit('gets 500 for invalid update', () => {
+    it('gets 500 for invalid update', () => {
 
       return agent
       .put('/articles/' + article.id)
