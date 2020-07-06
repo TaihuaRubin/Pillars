@@ -32,11 +32,11 @@ describe("React components", () => {
     // method to match the HTML string shown. You can pass these in a
     // "trivial" way, but look five or so specs down for a twist…
 
-    xit("includes the article's title as an h1", () => {
+    it("includes the article's title as an h1", () => {
       expect(articleWrapper.find("h1").text().trim()).to.be.equal("Migratory Birds");
     });
 
-    xit("includes the article's content as paragraph", () => {
+    it("includes the article's content as paragraph", () => {
       expect(articleWrapper.find("p").text().trim()).to.be.equal(
         "The South African cliff swallow (Petrochelidon spilodera), also known as the South African swallow, is a species of bird in the Hirundinidae family."
       );
@@ -48,7 +48,7 @@ describe("React components", () => {
     // should vary based on the passed-in data. Where does that data come from?
     // How do you get access to it? Go back to the `beforeEach` block to see.
 
-    xit("is not hardcoded", () => {
+    it("is not hardcoded", () => {
       const aDifferentArticle = {
         title: "Blue Wizards",
         content:
