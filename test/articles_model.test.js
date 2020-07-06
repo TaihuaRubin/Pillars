@@ -162,7 +162,7 @@ describe('The `Article` model', () => {
        *
        * https://sequelize-guides.netlify.com/instance-and-class-methods/
        */
-      xit('truncates the `content`', () => {
+      it('truncates the `content`', () => {
 
         expect(article.content).to.equal(fullText);
 
@@ -171,7 +171,7 @@ describe('The `Article` model', () => {
 
       });
 
-      xit('accepts any length', () => {
+      it('accepts any length', () => {
 
         expect(article.content).to.equal(fullText);
 
@@ -181,7 +181,7 @@ describe('The `Article` model', () => {
 
       });
 
-      xit('does -> NOT <- save the instance once truncated', async () => {
+      it('does -> NOT <- save the instance once truncated', async () => {
 
         expect(article.content).to.equal(fullText);
 
@@ -224,7 +224,7 @@ describe('The `Article` model', () => {
         return Promise.all(articles);
       });
 
-      xit('finds one specific article by its `title`', async () => {
+      it('finds one specific article by its `title`', async () => {
 
         const foundArticle = await Article.findByTitle('Migratory Birds');
         expect(foundArticle).not.to.be.an.instanceOf(Array);
@@ -247,7 +247,7 @@ describe('The `Article` model', () => {
      * https://sequelize.org/master/manual/creating-with-associations.html#belongsto-association-with-an-alias
      */
 
-    xit("belongs to a user, who is stored as the article's `author`", async () => {
+    it("belongs to a user, who is stored as the article's `author`", async () => {
 
       const creatingUser = User.create({ name: 'Alatar the Blue'});
       const creatingArticle = Article.create({
@@ -288,14 +288,14 @@ describe('The `Article` model', () => {
       });
     });
 
-    xit('is originally 0, even if not explicitly set', async () => {
+    it('is originally 0, even if not explicitly set', async () => {
 
       const foundArticle = await Article.findOne({where: {title: 'Biological Immortality'}});
       expect(foundArticle.version).to.equal(0);
 
     });
 
-    xit('increments by 1 every time the article is updated', async () => {
+    it('increments by 1 every time the article is updated', async () => {
 
       const foundArticle = await Article.findOne({where: {title: 'Biological Immortality'}});
       expect(foundArticle.version).to.equal(0);
@@ -331,7 +331,7 @@ describe('The `Article` model', () => {
      *
      * To activate this spec, change `xit` to `it`
      */
-    xit('is a custom getter', async () => {
+    it('is a custom getter', async () => {
 
       // tags should have a `defaultValue` that is an empty array.
       expect(Article.attributes.tags.defaultValue).to.deep.equal([]);
