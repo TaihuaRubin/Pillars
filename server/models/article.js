@@ -58,7 +58,7 @@ Article.findByTitle = function(titleName){
 
 // associations
 Article.belongsTo(User, {as: 'author'})
-
+User.hasMany(Article)
 
 
 // hooks

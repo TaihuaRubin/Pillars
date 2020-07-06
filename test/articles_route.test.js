@@ -48,7 +48,7 @@ describe('Articles Route:', () => {
      * **Extra Credit**: Consider using app.param to automatically load
      * in the Article whenever a param :id is detected
      */
-    xit('responds with an array via JSON', async () => {
+    it('responds with an array via JSON', async () => {
 
       const res = await agent
       .get('/articles')
@@ -67,7 +67,7 @@ describe('Articles Route:', () => {
      * using the GET /articles route
      *
      */
-    xit('returns an article if there is one in the DB', async () => {
+    it('returns an article if there is one in the DB', async () => {
 
       await Article.create({
         title: 'Test Article',

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Article = require('../models/article');
 
 /**
@@ -12,6 +11,19 @@ const Article = require('../models/article');
  *
  *
  */
+
+ router.get('/articles', async (req, res, next)=>{
+   try{
+    const allArticle = await Article.findAll()
+
+   }catch(e){
+     next(e)
+   }
+ })
+
+
+
+
 
 
 module.exports = router;
