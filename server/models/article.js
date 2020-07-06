@@ -10,7 +10,18 @@ const User = require('./user');
 //---------VVVV---------  your code below  ---------VVV----------
 
 const Article = db.define('article', {
+  title:{
+    type: Sequelize.STRING,
+    allowNull:false,
+    validate:{
+      notEmpty:true,
+    }
 
+  },
+  content:{
+    type:Sequelize.TEXT,
+    allowNull:false
+  }
 
 });
 
