@@ -98,12 +98,12 @@ describe("React components", () => {
     });
 
     // How (or where) do you define the initial state of a React component?
-    xit("starts with an initial state having an empty articles array", () => {
+    it("starts with an initial state having an empty articles array", () => {
       const currentState = articleListWrapper.state();
       expect(currentState.articles).to.be.deep.equal([]);
     });
 
-    xit("is comprised of <Article /> components based on what gets placed on the state", () => {
+    it("is comprised of <Article /> components based on what gets placed on the state", () => {
       // This will alter the component's state (i.e. `this.state`).
       articleListWrapper.setState({ articles: articleList });
       // There should now be a bunch of Article components in the output.
@@ -115,7 +115,7 @@ describe("React components", () => {
       expect(firstMessage.equals(<Article fullArticle={articleList[0]} />)).to.be.true; // eslint-disable-line
     });
 
-    xit("specifies a `key` prop on each <Article />, equal to that article's id", () => {
+    it("specifies a `key` prop on each <Article />, equal to that article's id", () => {
       articleListWrapper.setState({ articles: articleList });
 
       const firstMessage = articleListWrapper.find(Article).at(0);
